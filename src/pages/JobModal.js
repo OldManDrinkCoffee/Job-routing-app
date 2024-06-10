@@ -3,7 +3,7 @@ import * as React from "react";
 import { useParams } from "react-router-dom";
 import { getJob } from "../data.js";
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -21,9 +21,20 @@ export default function JobModal() {
   let params = useParams();
   let job = getJob(params.jobId);
 
-  const [modalOpen, setModalopen] = useState(true);
-  const location = useLocation();
+  const [modalOpen] = useState(true);
   const navigate = useNavigate();
+
+  // eslint-disable-next-line
+  /*
+  useEffect(() => {
+    if ([location.pathname]) {
+      job = getJob(params.jobId);
+      setModalopen(true);
+    } else {
+      setModalopen(false);
+    }
+  }, [location.pathname]);
+  */
 
   return (
     <>
