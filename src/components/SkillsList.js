@@ -11,7 +11,7 @@ export default function SkillsList({ skills }) {
             sx={{
               color: "white",
               backgroundColor: "red",
-              fontSize: "8px",
+              fontSize: "13px",
               borderRadius: "25px",
               height: "18px",
               overflowWrap: "break-word",
